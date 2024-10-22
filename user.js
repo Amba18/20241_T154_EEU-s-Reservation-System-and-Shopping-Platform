@@ -9,7 +9,7 @@ let users = [];
 let loggedInUser = null;
 
 // Student Signup
-EEU.post('/signup', function (req, res) {
+user.post('/signup', function (req, res) {
     const { username, password } = req.body;
     
     const existingUser = users.find(user => user.username === username);
@@ -22,7 +22,7 @@ EEU.post('/signup', function (req, res) {
 });
 
 // Student Login
-EEU.post('/login', function (req, res) {
+user.post('/login', function (req, res) {
     const { username, password } = req.body;
     
     const user = users.find(u => u.username === username && u.password === password);
@@ -35,7 +35,7 @@ EEU.post('/login', function (req, res) {
 });
 
 // View Inventory (Dashboard)
-EEU.get('/inventory', function (req, res) {
+user.get('/inventory', function (req, res) {
     if (!loggedInUser) {
         return res.status(401).send('Please login to view the inventory.');
     }
@@ -43,7 +43,7 @@ EEU.get('/inventory', function (req, res) {
 });
 
 // Reserve product
-EEU.post('/reserve', function (req, res) {
+user.post('/reserve', function (req, res) {
     if (!loggedInUser) {
         return res.status(401).send('Please login to reserve a product.');
     }
@@ -67,7 +67,7 @@ EEU.post('/reserve', function (req, res) {
 });
 
 // View Reservations
-EEU.get('/reservations', function (req, res) {
+user.get('/reservations', function (req, res) {
     if (!loggedInUser) {
         return res.status(401).send('Please login to view reservations.');
     }
@@ -77,7 +77,7 @@ EEU.get('/reservations', function (req, res) {
 });
 
 // Approve reservation (Admin-only)
-EEU.put('/reservations/approve', function (req, res) {
+user.put('/reservations/approve', function (req, res) {
     const { customerName, productName } = req.body;
     const reservation = reservations.find(res => res.customerName === customerName && res.productName === productName);
     
