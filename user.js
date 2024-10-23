@@ -90,7 +90,7 @@ user.put('/reservations/approve', function (req, res) {
 });
 
 // Cancel reservation
-EEU.put('/reservations/cancel', function (req, res) {
+user.put('/reservations/cancel', function (req, res) {
     if (!loggedInUser) {
         return res.status(401).send('Please login to cancel a reservation.');
     }
@@ -111,7 +111,7 @@ EEU.put('/reservations/cancel', function (req, res) {
 });
 
 // Add stock to inventory (Admin-only)
-EEU.post('/inventory/add', function (req, res) {
+user.post('/inventory/add', function (req, res) {
     const { productName, quantity } = req.body;
     const existingProduct = inventory.find(product => product.productName === productName);
     
