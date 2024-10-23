@@ -14,6 +14,7 @@ user.get('/login', function (req, res){
 });
 user.get('/dashboard', function (req, res){
     res.send('View dashboard')
+    
 });
 user.get('/dashboard/products', function (req, res){
     res.send('View Products')
