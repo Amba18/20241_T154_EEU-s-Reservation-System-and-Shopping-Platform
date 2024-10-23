@@ -1,6 +1,6 @@
 const express = require('express');
 const EEU = express.Router();
-const {userdb} = require('../userexampledb')
+const {customerdb} = require('../customerexampledb')
 
 let inventory = [];
 let reservations = [];
@@ -14,6 +14,7 @@ user.get('/login', function (req, res){
 });
 user.get('/dashboard', function (req, res){
     res.send('View dashboard')
+
 });
 user.get('/dashboard/products', function (req, res){
     res.send('View Products')

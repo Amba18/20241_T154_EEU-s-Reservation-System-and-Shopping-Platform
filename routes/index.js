@@ -1,11 +1,12 @@
 const express = require ('express');
 const app = express();
 
-const  students  = require('./exampleDB'); 
+const  customerdb  = require('./exampleDB'); 
+const  eeudb  = require('./exampleDB'); 
 
 
-const customerRoute = require('./routes/customer')
-const EEURoute = require('./routes/EEU')
+const customerRoute = require('./routes/Customer.js')
+const EEURoute = require('./routes/EEU.js')
 
 
 app.use('/users', customerRoute);
