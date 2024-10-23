@@ -1,7 +1,8 @@
 const express = require ('express');
 const app = express();
 
-const  userdb  = require('./exampleDB'); 
+const  customerdb  = require('./exampleDB'); 
+const  eeudb  = require('./exampleDB'); 
 
 
 const customerRoute = require('./routes/Customer.js')
