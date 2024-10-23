@@ -1,18 +1,15 @@
 const express = require ('express');
-const app = express();
+const bcrypt = require ('bcryptjs');
+const app=express();
+app.use(express.json());
 
-const  customerdb  = require('./exampleDB'); 
-const  eeudb  = require('./exampleDB'); 
+const customer = require('./Customer');
+const admin = require('./admin');
 
+app.use('', customer);
+app.use('', admin);
 
-const customerRoute = require('./routes/Customer.js')
-const EEURoute = require('./routes/EEU.js')
-
-
-app.use('/customer', customerRoute);
-app.use('/EEU', EEURoute);
-
-
-app.listen(3000, () => {
-    console.log("Server is running on port 3000")
+const PORT=8000;
+app.listen(PORT,()=>{
+    console.log(`Server running on port ${PORT}`);
 });
