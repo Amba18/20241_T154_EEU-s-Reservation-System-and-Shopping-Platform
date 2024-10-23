@@ -9,7 +9,7 @@ const customerRoute = require('./routes/Customer.js')
 const EEURoute = require('./routes/EEU.js')
 
 
-app.use('/users', customerRoute);
+app.use('/customer', customerRoute);
 app.use('/EEU', EEURoute);
 
 
