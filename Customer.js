@@ -1,6 +1,6 @@
 const express = require('express');
 const EEU = express.Router();
-const {customerdb} = require('../userexampledb')
+const {customerdb} = require('../customerexampledb')
 
 let inventory = [];
 let reservations = [];
